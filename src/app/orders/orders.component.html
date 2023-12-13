@@ -1,0 +1,36 @@
+
+{{orderList}}
+<div class="contaier" *ngIf="orderList.length>0">
+  <div class="text-end  px-2 mt-2 ">
+    <a routerLink="/addorder" ><button class="btn btn-success ml-2 mb-2 mt-2"> New Order </button></a>
+    
+    </div>
+       <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Person Name</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+            <tr *ngFor="let order of orderList">
+                <th scope="row">{{ order.orderId }}</th>
+                <td>{{ order.name }}</td>
+                <td>{{ order.price }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.personName }}</td>
+                </tr>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="orderList.length==0">
+ 
+    <h5 >No Orders Found!</h5>
+  
+</div>
+

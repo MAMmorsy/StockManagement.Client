@@ -1,0 +1,19 @@
+
+<div class="container" *ngIf="stockServices.data" >
+   <div class="row ">
+    <div class="col-sm-3 mb-2"*ngFor="let stock of stockServices.data">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ stock.name }}</h5>
+          <p class="card-text">{{ stock.price }}</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+<div *ngIf="!stockServices.data">
+    <h5 >No Stocks Found!</h5>
+</div>
