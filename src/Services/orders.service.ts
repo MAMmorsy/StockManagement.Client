@@ -29,6 +29,7 @@ export class OrdersService {
   private options = {
     headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'),
   };
+
   public AddOrder(order: NewOrder): Observable<NewOrder> {
     const headers = { 'content-type': 'application/json' };
     const body = JSON.stringify(order);
